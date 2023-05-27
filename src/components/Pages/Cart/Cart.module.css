@@ -1,0 +1,61 @@
+.container{
+    height: 90%;
+    position: relative;
+}
+.carrinhoVazio{
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 200px;
+    flex-direction: column;
+    color: rgb(187, 185, 185);
+}
+h1{
+    font-size: 30px;
+}
+.botaoComprar{
+    position: sticky;
+    z-index: 10;
+    bottom: 1vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.totalContainer{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    width: 87.5%;
+    justify-content: space-between;
+    padding: 1px;
+    border: 3px solid rgba(206, 205, 205, 0.356);
+    border-radius: 5px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    font-size: 19px;
+}
+.textoValor{
+    margin: 0;
+margin-left: 10px !important;
+}
+.textoValorNumero{
+    margin: 0;
+    margin-right: 10px;
+}
+.botao{
+    text-align: center;
+    background-color: rgb(255, 123, 0);
+    padding-left: 35%;
+    padding-right: 35%;
+    font-size: 30px;
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.137);
+    margin: 0;
+}

@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    border-top: 1px solid rgb(180, 180, 180);
+    padding: 10px;
+}
+.container img{
+    background-color: red;
+    width: 50%;
+    height: 150px;
+    border-radius: 5px;
+}
+.cartText{
+    margin-left: 10px;
+}
+.cartText p{
+    margin: 0px;
+    margin-top: 10px;
+
+}
+.nomeSanduiche{
+    font-size: 20px;
+    font-weight: 500;
+}

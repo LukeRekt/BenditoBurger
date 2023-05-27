@@ -1,23 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
 
+import Home from './components/Pages/Home/Home';
+import Header from './components/Header/Header';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { CartContext } from './context/context';
+import { useEffect, useState } from 'react';
+import Cart from './components/Pages/Cart/Cart';
 function App() {
+  const [cart, setCart] = useState(0)
+  useEffect(() =>{
+    if(sessionStorage.getItem('carrinho')){
+      setCart(Math.round(sessionStorage.getItem('carrinho').length / 17))
+    }
+  }, [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+ <CartContext.Provider value={{cart, setCart}}>
+
+  <Router>
+  <Header/>
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/carrinho' element={<Cart/>}/>
+    </Routes>
+  </Router>
+     
+     
+     </CartContext.Provider>
     </div>
   );
 }
