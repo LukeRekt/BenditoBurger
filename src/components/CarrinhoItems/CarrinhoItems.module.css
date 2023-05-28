@@ -11,6 +11,11 @@
     height: 110px;
     border-radius: 5px;
 }
+.burgerContent{
+    display: flex;
+    width: 90%;
+    align-items: center;
+}
 .cartText{
     margin-left: 10px;
 }
