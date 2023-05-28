@@ -2,11 +2,13 @@
     display: flex;
     border-top: 1px solid rgb(180, 180, 180);
     padding: 10px;
+    width: 90%;
+    align-items: center;
+    justify-content: space-between;
 }
 .container img{
-    background-color: red;
-    width: 50%;
-    height: 150px;
+    width: 40%;
+    height: 110px;
     border-radius: 5px;
 }
 .cartText{
@@ -14,10 +16,19 @@
 }
 .cartText p{
     margin: 0px;
-    margin-top: 10px;
+    line-height: 2.3;
 
 }
 .nomeSanduiche{
     font-size: 20px;
     font-weight: 500;
+}
+.seletorQuantidade{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.seletorQuantidade svg{
+font-size: 30px;
 }

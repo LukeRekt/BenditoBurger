@@ -3,20 +3,39 @@ import imagemBurger from '../../assets/burgao.jpg'
 import { FaCartPlus } from 'react-icons/fa';
 import { useContext, useEffect, useState } from 'react';
 import { CartContext } from '../../context/context';
-export default function BurgerCards(){
+export default function BurgerCards(props){
   const { cart, setCart } = useContext(CartContext)
-  let addToCarrinho = () =>{
-    
-    sessionStorage.setItem('carrinho', '22 é bolsonaro')
-}
 
-function addProduct(productId, imagemSanduiche, nomeSanduiche, preco){
+// function addProduct(productId, imagemSanduiche, nomeSanduiche, preco, quantidade){
+//   let carrinho = [];
+//   setCart(cart + 1);
+//   if(sessionStorage.getItem('carrinho')){
+//     carrinho = JSON.parse(sessionStorage.getItem('carrinho'));
+//   }
+//   carrinho.push({'productId' : productId, 'imagem': imagemSanduiche, 'nome': nomeSanduiche, 'preco': preco, 'quantidade': quantidade});
+//   sessionStorage.setItem('carrinho', JSON.stringify(carrinho));
+// }
+function addProduct(productId, imagemSanduiche, nomeSanduiche, preco, quantidade) {
   let carrinho = [];
   setCart(cart + 1);
-  if(sessionStorage.getItem('carrinho')){
+  if (sessionStorage.getItem('carrinho')) {
     carrinho = JSON.parse(sessionStorage.getItem('carrinho'));
+
+    // Verificar se o produto já existe no carrinho
+    const produtoExistente = carrinho.find(item => item.productId === productId);
+    if (produtoExistente) {
+      // Produto já existe, incrementar a quantidade
+      produtoExistente.quantidade += 1;
+    } else {
+      // Produto não existe, adicionar um novo item
+      carrinho.push({'productId': productId, 'imagem': imagemSanduiche, 'nome': nomeSanduiche, 'preco': preco, 'quantidade': quantidade});
+    }
+  } else {
+    // Carrinho vazio, adicionar o primeiro item
+    carrinho.push({'productId': productId, 'imagem': imagemSanduiche, 'nome': nomeSanduiche, 'preco': preco, 'quantidade': quantidade});
   }
-  carrinho.push({'productId' : productId, 'imagem': imagemSanduiche, 'nome': nomeSanduiche, 'preco': preco});
+
+  // Atualizar o carrinho no sessionStorage
   sessionStorage.setItem('carrinho', JSON.stringify(carrinho));
 }
 
@@ -31,14 +50,14 @@ function addProduct(productId, imagemSanduiche, nomeSanduiche, preco){
     return (
     <div className={styles.container}>
       <div className={styles.Card}>
-      <img src={imagemBurger}/>
+      <img src={props.imagemBurger}/>
       <div className={styles.cardFooter}>
         <div className={styles.cardFooterLeft}>
-        <p>X-Podrao</p>
+        <p>{props.nomeBurger}</p>
         <p className={styles.textoSaibaMais}>Saiba-mais >></p>
         </div>
         <div className={styles.cardFooterRight}>
-        <FaCartPlus onClick={() => addProduct(1, imagemBurger, "X-Podrao", "14,90")}/>
+        <FaCartPlus onClick={() => addProduct(props.idProduto, props.imagemBurger, props.nomeBurger, props.preco, 1)}/>
         </div>
       </div>
       </div>

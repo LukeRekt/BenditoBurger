@@ -6,6 +6,7 @@
     flex-direction: column;
     margin-top: 10px;
     position: relative;
+    
 }
 .Card{
     background-color: #181818;
@@ -13,6 +14,7 @@
     height: 200px;
     border-radius: 30px;
     overflow: hidden;
+   
 }
 .Card img{
     width: 100%;
@@ -46,4 +48,5 @@
 .cardFooterRight svg{
     font-size: 45px;
     color: #FF9900 !important;
+    
 }
