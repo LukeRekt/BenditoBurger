@@ -3,6 +3,8 @@ import imagemBurger from '../../assets/burgao.jpg'
 import { FaCartPlus } from 'react-icons/fa';
 import { useContext, useEffect, useState } from 'react';
 import { CartContext } from '../../context/context';
+import { AiFillPlusCircle } from 'react-icons/ai';
+import { AiFillMinusCircle } from 'react-icons/ai';
 export default function BurgerCards(props){
   const { cart, setCart } = useContext(CartContext)
 
@@ -60,6 +62,11 @@ function addProduct(productId, imagemSanduiche, nomeSanduiche, preco, quantidade
         <div className={styles.cardFooterRight}>
           <div className={styles.addToCart}>
           <p className={styles.textoSaibaMais}>Saiba-mais >></p>
+          <div className={styles.seletorQuantidade}>
+                <AiFillMinusCircle/>
+                <p>1</p>
+                <AiFillPlusCircle/>
+            </div>
             <button onClick={() => addProduct(props.idProduto, props.imagemBurger, props.nomeBurger, props.preco, 1)}>Adicionar ao carrinho</button>
             
           </div>

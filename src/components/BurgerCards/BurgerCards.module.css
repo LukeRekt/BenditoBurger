@@ -57,6 +57,17 @@
   justify-content: space-between;
   height: 100%;
 }
+.seletorQuantidade{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.seletorQuantidade svg{
+    color:#181818 !important;
+}
+.seletorQuantidade svg{
+font-size: 30px;
+}
 .addToCart button{
     
     font-size: 15px;

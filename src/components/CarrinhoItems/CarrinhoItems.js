@@ -1,4 +1,5 @@
 import styles from "./CarrinhoItems.module.css"
+import { AiFillMinusCircle } from 'react-icons/ai';
 import { AiFillPlusCircle } from 'react-icons/ai';
 export default function CarrinhoItems(props){
     return(
@@ -14,7 +15,7 @@ export default function CarrinhoItems(props){
                  </div>
 
             <div className={styles.seletorQuantidade}>
-                <AiFillPlusCircle/>
+                <AiFillMinusCircle/>
                 <p>{props.quantidade}</p>
                 <AiFillPlusCircle/>
             </div>
