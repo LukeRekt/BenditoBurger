@@ -7,6 +7,7 @@ import { AiFillPlusCircle } from 'react-icons/ai';
 import { AiFillMinusCircle } from 'react-icons/ai';
 export default function BurgerCards(props){
   const { cart, setCart } = useContext(CartContext)
+  const [quantidade, setQuantidade] = useState(1)
 
 // function addProduct(productId, imagemSanduiche, nomeSanduiche, preco, quantidade){
 //   let carrinho = [];
@@ -49,6 +50,13 @@ function addProduct(productId, imagemSanduiche, nomeSanduiche, preco, quantidade
 //   localStorage.setItem('products', JSON.stringify(products));
 // }
 
+let removeBurgerCount = () => {
+  if(quantidade == 1){
+    return;
+  }
+  setQuantidade(quantidade -1)
+}
+
     return (
     <div className={styles.container}>
       <div className={styles.Card}>
@@ -63,11 +71,11 @@ function addProduct(productId, imagemSanduiche, nomeSanduiche, preco, quantidade
           <div className={styles.addToCart}>
           <p className={styles.textoSaibaMais}>Saiba-mais >></p>
           <div className={styles.seletorQuantidade}>
-                <AiFillMinusCircle/>
-                <p>1</p>
-                <AiFillPlusCircle/>
+                <AiFillMinusCircle onClick={removeBurgerCount}/>
+                <p>{quantidade}</p>
+                <AiFillPlusCircle onClick={() => setQuantidade(quantidade +1)}/>
             </div>
-            <button onClick={() => addProduct(props.idProduto, props.imagemBurger, props.nomeBurger, props.preco, 1)}>Adicionar ao carrinho</button>
+            <button onClick={() => addProduct(props.idProduto, props.imagemBurger, props.nomeBurger, props.preco, quantidade)}>Adicionar ao carrinho</button>
             
           </div>
         {/* <FaCartPlus /> */}

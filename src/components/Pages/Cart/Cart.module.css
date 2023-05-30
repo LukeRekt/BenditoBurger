@@ -27,7 +27,7 @@ h1{
     position: absolute;
     z-index: 10;
    width: 98%;
-   bottom: 0%;
+   bottom: 2%;
     margin: auto;
     display: flex;
     flex-direction: column;

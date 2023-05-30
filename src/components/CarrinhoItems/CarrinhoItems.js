@@ -15,9 +15,9 @@ export default function CarrinhoItems(props){
                  </div>
 
             <div className={styles.seletorQuantidade}>
-                <AiFillMinusCircle/>
-                <p>{props.quantidade}</p>
                 <AiFillPlusCircle/>
+                <p>{props.quantidade}</p>
+                <AiFillMinusCircle/>
             </div>
         </div>
     )
