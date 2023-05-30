@@ -54,10 +54,16 @@ function addProduct(productId, imagemSanduiche, nomeSanduiche, preco, quantidade
       <div className={styles.cardFooter}>
         <div className={styles.cardFooterLeft}>
         <p>{props.nomeBurger}</p>
-        <p className={styles.textoSaibaMais}>Saiba-mais >></p>
+       
+        <p>R$ 19,90</p>
         </div>
         <div className={styles.cardFooterRight}>
-        <FaCartPlus onClick={() => addProduct(props.idProduto, props.imagemBurger, props.nomeBurger, props.preco, 1)}/>
+          <div className={styles.addToCart}>
+          <p className={styles.textoSaibaMais}>Saiba-mais >></p>
+            <button onClick={() => addProduct(props.idProduto, props.imagemBurger, props.nomeBurger, props.preco, 1)}>Adicionar ao carrinho</button>
+            
+          </div>
+        {/* <FaCartPlus /> */}
         </div>
       </div>
       </div>

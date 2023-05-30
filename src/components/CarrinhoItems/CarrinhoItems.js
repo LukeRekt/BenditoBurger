@@ -9,7 +9,7 @@ export default function CarrinhoItems(props){
                 <p className={styles.nomeSanduiche}>{props.nome}</p>
                 
                 <p>R$ {props.preco}</p>
-                <p>1x</p>
+                <p>{props.quantidade}x</p>
             </div>
                  </div>
 
