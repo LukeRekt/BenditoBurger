@@ -5,6 +5,7 @@ import { useContext, useEffect, useState } from 'react';
 import { CartContext } from '../../context/context';
 import { AiFillPlusCircle } from 'react-icons/ai';
 import { AiFillMinusCircle } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 export default function BurgerCards(props){
   const { cart, setCart } = useContext(CartContext)
   const [quantidade, setQuantidade] = useState(1)
@@ -69,7 +70,9 @@ let removeBurgerCount = () => {
         </div>
         <div className={styles.cardFooterRight}>
           <div className={styles.addToCart}>
-          <p className={styles.textoSaibaMais}>Saiba-mais >></p>
+          <p className={styles.textoSaibaMais}>
+            <Link to="/lanche"> Saiba-mais >></Link>
+            </p>
           <div className={styles.seletorQuantidade}>
                 <AiFillMinusCircle onClick={removeBurgerCount}/>
                 <p>{quantidade}</p>

@@ -1,0 +1,17 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 49%;
+    border-radius: 3px;
+    margin-bottom: 4px;
+    background-color: rgb(255, 255, 255);
+    height: 80px;
+
+}
+.container img{
+    width: 20%;
+}
+.container p{
+    font-weight: bold;
+}

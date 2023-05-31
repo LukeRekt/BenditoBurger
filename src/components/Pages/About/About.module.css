@@ -1,0 +1,78 @@
+.container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.imagem{
+    width: 95%;
+    margin-top: 10px;
+}
+.imagem img{
+    width: 100%;
+    margin: auto;
+}
+.ingredientes{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+.ingredientes h2{
+    width: 95%;
+    background-color: #FF9900;
+    text-align: center;
+    padding: 15px;
+    color: black;
+}
+.ingredientesWrap{
+    width: 98%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 10px;
+
+}
+.rodape{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    
+    background-color: rgb(255, 255, 255);
+    height: 20vh;
+    flex-direction: column;
+   
+}
+.botao{
+    
+    width: 80%;
+    background-color: #FF9900;
+    border: none;
+    padding: 10px 20px 10px 20px;
+    border-radius: 50px;
+    box-shadow: 5px 2px 1px 1px rgba(0, 0, 0, 0.281);
+    font-weight: bold;
+    font-size: 18px;
+}
+.seletorQuantidade{
+     margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+.seletorQuantidade p{
+   font-size: 40px;
+   margin: 0;
+   padding: 0;
+}
+.seletorQuantidade svg{
+    color:#181818 !important;
+}
+.seletorQuantidade svg{
+font-size: 30px;
+}
