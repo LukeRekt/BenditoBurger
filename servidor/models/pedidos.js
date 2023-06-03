@@ -7,13 +7,14 @@ const pedidosSchema = new mongoose.Schema(
 			required: true,
 		},
         telefone: {
-			type:Number,
+			type:String,
 			required: true,
 		},
         cpf: {
-			type:Number,
+			type:String,
 			required: true,
-            max:11, 
+            min:12, 
+            max:12, 
 		},
         pedidoConteudo: {
 			type: Array,

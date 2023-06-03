@@ -1,4 +1,4 @@
-const Products = require("../models/products")
+const Products = require("../models/produtos")
 const jwt = require("jsonwebtoken");
 const user = require("../models/user");
 const fs = require('fs');
