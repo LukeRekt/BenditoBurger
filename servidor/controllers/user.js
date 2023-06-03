@@ -35,36 +35,6 @@ exports.register = async (req, res) => {
     });
 };
 
-exports.registro = async (req, res) => {
-    //testar se o user ja existe
-	console.log(req)
-    const usernameExists = await User.findOne({
-        username: req.body.username,
-    });
-    const emailExists = await User.findOne({
-        email: req.body.email,
-    });
-    if (usernameExists) {
-        return res.status(403).json({
-            error: "Usuário já existe",
-        });
-    }
-    if (emailExists) {
-        return res.status(403).json({
-            error: "Email já existe",
-        });
-    }
-    
-    //se novo user, criar novo user
-    const user = new User(req.body);
-    console.log(req.body)
-    await user.save();
-      console.log("Usuário " + req.body.username + " Cadastrado com sucesso!")
-    res.status(201).json({
-        message: "Cadastrado com sucesso!",
-    });
-};
-
 exports.login = async (req, res) => {
     //buscar usuario baseado no email
     const { email, password } = req.body;
@@ -95,20 +65,8 @@ exports.login = async (req, res) => {
         const { username } = user;
         const { isAdmin } = user;
         const { email } = user;
-        const { totalTime } = user;
-        console.log(totalTime)
+ 
 
-
-        let data = new Date(totalTime);
-        data.setDate(data.getDate());
-
-        if(Date.now() > new Date(totalTime)){
-            console.log("assinatura expirada")
-            return res.status(403).json({
-                error: "Seu login está expirado!",
-            });
-
-        }
 
         console.log("Usuário " + username + " Logado com sucesso!")
         return res.json({
@@ -133,20 +91,7 @@ exports.getLoggedInUser = (req, res) => {
     const { username } = req.user;
     const { isAdmin } = req.user;
     const { email } = req.user;
-    const { totalTime } = req.user;
-        
-    let check;
 
-    let data = new Date(totalTime);
-
-    data.setDate(data.getDate());
-    var CurrentDate = new Date();
-
-    if(CurrentDate > new Date(totalTime)){
-        check = false;
-    }else if(CurrentDate < new Date(totalTime)){
-        check = true;
-    }
 
     return res.status(200).json({
         message: "O Usuario ainda esta logado",
@@ -160,84 +105,8 @@ exports.getLoggedInUser = (req, res) => {
 }
 
 
-exports.buscarUser = async (req, res) => {
-    //buscar usuario baseado no email
-    const { username } = req.body;
-
-    await User.findOne({ username }).exec((err, usuario) => {
-        //se der erro ou nenhum usuario encontrado
-        if (err || !usuario) {
-            return res.status(401).json({
-                error: "Credenciais Invalidas",
-            });
-        }
-        //retornar resposta para o usuario
-        const { username } = usuario;
-
-        return res.json({
-            message: "Usuário encontrado!",
-            username,
-        });
-    });
-};
-
-exports.getMembership = async (req, res) => {
-    //buscar usuario baseado no email
-    const { username } = req.user;
-    let check;
-    await User.findOne({ username }).exec((err, usuario) => {
-        //se der erro ou nenhum usuario encontrado
-        if (err || !usuario) {
-            return res.status(401).json({
-                error: "Credenciais Invalidas",
-            });
-        }
-        //retornar resposta para o usuario
-        const { username } = usuario;
-        const { totalTime } = usuario;
-        
-        let data = new Date(totalTime);
-
-        data.setDate(data.getDate());
-
-        if(data.getDate() > new Date(totalTime)){
-            check = false;
-        }else if(data.getDate() < new Date(totalTime)){
-            check = true;
-        }
 
 
-
-
-        return res.json({
-            message: "Usuário encontrado!",
-            check,
-        });
-    });
-};
-
-exports.trocarAvatar = async (req, res) => {
-    const { username } = req.user;
-    const filename = req.files.screenshot.name;
-    const file = req.files.screenshot;
-    let uploadPath = __dirname + "../../public/imagens/avatars/" + filename;
-    file.mv(uploadPath);
-    const filter = {username: username}
-    const update = { userAvatar: `static/imagens/avatars/${filename}`};
-    
-    const doc = await User.findOneAndUpdate(filter, update, {
-    //   returnOriginal: false,
-    //   new: true, 
-    //   upsert: true
-    });
-    console.log(username)
-    res.status(200).json({ novoAvatar: doc.userAvatar })
-    // 
-    // 
-    // 
-    // 
-    
-};
 exports.AddDays = async (req, res) => {
     console.log(req.body)
     const dados = req.body
@@ -274,15 +143,3 @@ exports.AddDays = async (req, res) => {
 
 }
 
-exports.listarUsers = async (req, res) => {
-    //buscar usuario baseado no email
-
-    await User.find({}, {_id: 0, hashedPassword: 0, salt: 0, updatedAt: 0, isAdmin: 0, isActive: 0, __v: 0}).exec((err, users) => {
-
-        //retornar resposta para o usuario
-        
-        return res.json({
-            users,
-        });
-    });
-};

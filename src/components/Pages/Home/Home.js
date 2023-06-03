@@ -27,6 +27,7 @@ export default function Home(){
             <BurgerCards idProduto={1} imagemBurger={imagemBurger} nomeBurger="X-Carniça" preco="42,90"/>
             <BurgerCards idProduto={2} imagemBurger={imagemBurger2} nomeBurger="X-Podridão" preco="14,90"/>
             <BurgerCards idProduto={3} imagemBurger={imagemBurger3} nomeBurger="X-Lixão" preco="22,90"/>
+            
         </div>
     )
 }

@@ -26,14 +26,6 @@ const userSchema = new mongoose.Schema(
 			type: Date,
 			default: Date.now()
 		},
-		telefone: {
-			type: Number,
-			required: true
-		},
-		isActive: {
-			type: Boolean,
-			default: false
-		},
 		hashedPassword: {
 			type: String,
 			required: true,
