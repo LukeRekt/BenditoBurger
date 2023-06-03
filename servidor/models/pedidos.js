@@ -32,7 +32,7 @@ const pedidosSchema = new mongoose.Schema(
         estado: {
 			type: String,
 			required: false,
-            default: "Preparando"
+            default: "Pendente"
 		},
         isActive: {
 			type: Boolean,
