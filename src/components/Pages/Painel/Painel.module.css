@@ -6,8 +6,8 @@
 }
 .leftSide{
 width: 25%;
-height: 100%;
-box-shadow: 1px 13px 10px 10px rgba(65, 65, 65, 0.918);
+height: 95%;
+box-shadow: 1px 13px 10px 1px rgba(65, 65, 65, 0.918);
 z-index: 1;
 display: flex;
 align-items: center;
@@ -35,7 +35,10 @@ overflow-x: hidden;
 	background-color: #D62929;
 }
 .rightSide{
-background-color: green;
+    background-color: rgb(230, 230, 230);
 width: 75%;
 height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
 }

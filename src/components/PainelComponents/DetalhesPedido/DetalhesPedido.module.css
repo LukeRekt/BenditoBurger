@@ -1,0 +1,90 @@
+.container{
+    width: 97%;
+    height: 95%;
+    box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.24);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pedidoDetails{
+    background-color: aliceblue;
+width: 30%;
+height: 95%;
+}
+.pedidoDetails h1 {
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.116);
+    padding-bottom: 10px;
+}
+.comprador {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.116);
+}
+.comprador p{
+    font-size: 20px;
+    font-weight: 500;
+}
+.endereco {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.endereco p{
+    font-size: 20px;
+    font-weight: 500;
+}
+.pedidosContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 68%;
+    height: 95%;
+    margin-left: 10px;
+    justify-content: space-between;
+}
+.pedidos{
+    background-color: aliceblue;
+    width: 100%;
+    margin-bottom: 10px;
+    height: 89%;
+}
+.pedidosRodape{
+    background-color: aliceblue;
+height: 10%;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.botoes{
+    height: 100%;
+    display: flex;
+align-items: center;
+justify-content: center;
+}
+.botoes button{
+    background-color: rgb(56, 241, 0);
+    margin-right: 10px;
+    font-size: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    color: black;
+
+}
+.botoes button:first-child{
+    background-color: rgb(241, 0, 40);
+    color: white;
+
+
+}
+.statusMenu{
+    margin-left: 10px;
+    }
+.statusMenu select{
+padding: 10px 20px 10px 20px;
+font-size: 20px;
+}

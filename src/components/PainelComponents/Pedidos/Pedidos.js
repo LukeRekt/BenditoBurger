@@ -14,8 +14,7 @@ export default function Pedidos (){
                 <span>R$ 19,90</span>
                 </div>
                 <div className={styles.pedidosButton}>
-                <button className={styles.botaoAceitar}>Aceitar</button>
-                <button className={styles.botaoCancelar}>Cancelar</button>
+                <p>Preparando</p>
                 </div>
             </div>
         </div>

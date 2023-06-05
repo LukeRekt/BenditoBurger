@@ -1,3 +1,4 @@
+import DetalhesPedido from '../../PainelComponents/DetalhesPedido/DetalhesPedido'
 import Pedidos from '../../PainelComponents/Pedidos/Pedidos'
 import styles from './Painel.module.css'
 
@@ -15,6 +16,8 @@ export default function Painel(){
             <Pedidos/>
             <Pedidos/>
         </div>
-        <div className={styles.rightSide}></div>
+        <div className={styles.rightSide}>
+            <DetalhesPedido/>
+        </div>
     </div>)
 }
