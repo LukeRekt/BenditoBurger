@@ -1,0 +1,48 @@
+.container{
+    background-color: rgb(230, 230, 230);
+    width: 92%;
+    height: 100px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 20px;
+    box-shadow: 1px 5px 10px 1px rgba(0, 0, 0, 0.356);
+}
+.leftPedido{
+ display: flex;
+ flex-direction: column;   
+ width: 50%;
+}
+.rightPedido{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    height: 100%;
+
+}
+.pedidosText{
+    display: flex;
+    flex-direction: column;  
+    justify-content: space-between;
+    height: 65%;
+    font-size: 20px;
+}
+.pedidosButton{
+width: 60%;
+}
+.botaoAceitar{
+background-color: rgb(7, 255, 7);
+color: white;
+font-size: 22px;
+width: 100%;
+margin-bottom: 5px;
+}
+.botaoCancelar{
+    background-color: rgb(255, 7, 7);
+    color: white;
+    font-size: 22px;
+    width: 100%;
+}
