@@ -1,0 +1,26 @@
+.container{
+    width: 98%;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+align-items: center;
+padding: 10px;
+box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.24);
+}
+.leftPedido{
+font-size: 20px;
+display: flex;
+align-items: center;
+}
+.leftPedido input{
+width: 30px;
+height: 30px;
+}
+.rightPedido{
+    font-size: 20px;
+    width: 90%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}

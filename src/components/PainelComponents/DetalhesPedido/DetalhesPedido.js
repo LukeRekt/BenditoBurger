@@ -1,3 +1,4 @@
+import PedidoContent from "../PedidoContent/PedidoContent"
 import styles from "./DetalhesPedido.module.css"
 
 export default function DetalhesPedido(){
@@ -20,11 +21,20 @@ export default function DetalhesPedido(){
                     <span> <span style={{fontWeight: 700}}>Cep:</span> 74863-230</span>
                     <span> <span style={{fontWeight: 700}}>Ponto de Referência:</span> Portão verde ao lado do mercadinho.</span>
                 </div>
+                <div className={styles.tempoTotal}>
+                    <p>Tempo total(minutos): </p>
+                    <span style={{fontWeight: 700}}>40</span>
+
+                </div>
                 
             </div>
             <div className={styles.pedidosContainer}>
                 <div className={styles.pedidos}>
-                    a
+                    <PedidoContent ordem="1"/>
+                    <PedidoContent ordem="2"/>
+                    <PedidoContent ordem="3"/>
+                    <PedidoContent ordem="4"/>
+                    <PedidoContent ordem="5"/>
                 </div>
             <div className={styles.pedidosRodape}>
                 <div className={styles.statusMenu}>

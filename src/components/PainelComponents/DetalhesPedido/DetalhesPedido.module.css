@@ -31,10 +31,34 @@ height: 95%;
     margin-left: 10px;
     display: flex;
     flex-direction: column;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.116);
 }
 .endereco p{
     font-size: 20px;
     font-weight: 500;
+}
+.tempoTotal{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+}
+.tempoTotal p{
+    align-self: self-start;
+    font-size: 20px;
+    font-weight: bold;
+}
+.tempoTotal span{
+    font-size: 75px;
+    font-weight: 500;
+    background-color: rgb(255, 7, 7);
+    width: 40%;
+    height: 120px;
+    text-align: center;
+    border-radius: 20px;
+    color: whitesmoke;
 }
 .pedidosContainer{
     display: flex;
