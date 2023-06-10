@@ -28,7 +28,7 @@ router.get("/produtos", listarProdutos);
 
 //pedidos
 router.post("/registrarpedido", registrarPedidos);
-router.get("/pedidos", verifyToken, userById, getUserPermission, listarPedidos);
+router.get("/pedidos",  listarPedidos);
 
 
 module.exports = router;
