@@ -1,0 +1,47 @@
+
+.dot{
+  display: inline;
+  height: 24px;
+  width: 24px;
+  border-radius: 12px;
+  background-color: #FFF;
+  font-family: 'Open Sans', sans-serif;
+
+}
+
+@keyframes GoUp {
+
+  0% {
+      transform: translateY(-10px);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  height: 100%;
+}
+  .dot_one{
+    margin-right: 10px;
+    animation: .5s GoUp infinite alternate;
+
+  }
+
+  .dot_two{
+    margin-right: 10px;
+    animation: .5s GoUp infinite alternate;
+    animation-delay: .25s;
+
+  }
+
+  .dot_three{
+    animation: .5s GoUp infinite alternate;
+    animation-delay: .5s;
+
+  }
+

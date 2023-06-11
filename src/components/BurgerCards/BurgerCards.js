@@ -10,38 +10,31 @@ export default function BurgerCards(props){
   const { cart, setCart } = useContext(CartContext)
   const [quantidade, setQuantidade] = useState(1)
 
-// function addProduct(productId, imagemSanduiche, nomeSanduiche, preco, quantidade){
+//ANTIGO ADD PRODUCT
+
+// function addProduct(productId, imagemSanduiche, nomeSanduiche, preco, quantidade) {
 //   let carrinho = [];
 //   setCart(cart + 1);
-//   if(sessionStorage.getItem('carrinho')){
+//   if (sessionStorage.getItem('carrinho')) {
 //     carrinho = JSON.parse(sessionStorage.getItem('carrinho'));
+
+//     // Verificar se o produto já existe no carrinho
+//     const produtoExistente = carrinho.find(item => item.productId === productId);
+//     if (produtoExistente) {
+//       // Produto já existe, incrementar a quantidade
+//       produtoExistente.quantidade += 1;
+//     } else {
+//       // Produto não existe, adicionar um novo item
+//       carrinho.push({'productId': productId, 'imagem': imagemSanduiche, 'nome': nomeSanduiche, 'preco': preco, 'quantidade': quantidade});
+//     }
+//   } else {
+//     // Carrinho vazio, adicionar o primeiro item
+//     carrinho.push({'productId': productId, 'imagem': imagemSanduiche, 'nome': nomeSanduiche, 'preco': preco, 'quantidade': quantidade});
 //   }
-//   carrinho.push({'productId' : productId, 'imagem': imagemSanduiche, 'nome': nomeSanduiche, 'preco': preco, 'quantidade': quantidade});
+
+//   // Atualizar o carrinho no sessionStorage
 //   sessionStorage.setItem('carrinho', JSON.stringify(carrinho));
 // }
-function addProduct(productId, imagemSanduiche, nomeSanduiche, preco, quantidade) {
-  let carrinho = [];
-  setCart(cart + 1);
-  if (sessionStorage.getItem('carrinho')) {
-    carrinho = JSON.parse(sessionStorage.getItem('carrinho'));
-
-    // Verificar se o produto já existe no carrinho
-    const produtoExistente = carrinho.find(item => item.productId === productId);
-    if (produtoExistente) {
-      // Produto já existe, incrementar a quantidade
-      produtoExistente.quantidade += 1;
-    } else {
-      // Produto não existe, adicionar um novo item
-      carrinho.push({'productId': productId, 'imagem': imagemSanduiche, 'nome': nomeSanduiche, 'preco': preco, 'quantidade': quantidade});
-    }
-  } else {
-    // Carrinho vazio, adicionar o primeiro item
-    carrinho.push({'productId': productId, 'imagem': imagemSanduiche, 'nome': nomeSanduiche, 'preco': preco, 'quantidade': quantidade});
-  }
-
-  // Atualizar o carrinho no sessionStorage
-  sessionStorage.setItem('carrinho', JSON.stringify(carrinho));
-}
 
 // function removeProduct(productId){
 
@@ -50,6 +43,61 @@ function addProduct(productId, imagemSanduiche, nomeSanduiche, preco, quantidade
 //   let products = storageProducts.filter(product => product.productId !== productId );
 //   localStorage.setItem('products', JSON.stringify(products));
 // }
+
+
+//NOVO ADD PRODUCT
+
+function addProduct(productId, imagemSanduiche, nomeSanduiche, preco, quantidade, ingredientesRemover) {
+  let carrinho = [];
+  setCart(cart + 1);
+  if (sessionStorage.getItem('carrinho')) {
+    carrinho = JSON.parse(sessionStorage.getItem('carrinho'));
+
+    // Verificar se o produto já existe no carrinho
+    const produtoExistente = carrinho.find(item => item.productId === productId);
+    if (produtoExistente) {
+      if (ingredientesRemover.length > 0) {
+        // Produto já existe, mas há ingredientes a serem removidos, criar um novo objeto
+        carrinho.push({
+          'productId': productId,
+          'imagem': imagemSanduiche,
+          'nome': nomeSanduiche,
+          'preco': preco,
+          'quantidade': 1,
+          'ingredientesRemover': ingredientesRemover
+        });
+      } else {
+        // Produto já existe, incrementar a quantidade
+        produtoExistente.quantidade += 1;
+      }
+    } else {
+      // Produto não existe, adicionar um novo item
+      carrinho.push({
+        'productId': productId,
+        'imagem': imagemSanduiche,
+        'nome': nomeSanduiche,
+        'preco': preco,
+        'quantidade': quantidade,
+        'ingredientesRemover': ingredientesRemover
+      });
+    }
+  } else {
+    // Carrinho vazio, adicionar o primeiro item
+    carrinho.push({
+      'productId': productId,
+      'imagem': imagemSanduiche,
+      'nome': nomeSanduiche,
+      'preco': preco,
+      'quantidade': quantidade,
+      'ingredientesRemover': ingredientesRemover
+    });
+  }
+
+  // Atualizar o carrinho no sessionStorage
+  sessionStorage.setItem('carrinho', JSON.stringify(carrinho));
+}
+
+
 
 let removeBurgerCount = () => {
   if(quantidade == 1){
@@ -78,7 +126,7 @@ let removeBurgerCount = () => {
                 <p>{quantidade}</p>
                 <AiFillPlusCircle onClick={() => setQuantidade(quantidade +1)}/>
             </div>
-            <button onClick={() => addProduct(props.idProduto, props.imagemBurger, props.nomeBurger, props.preco, quantidade)}>Adicionar ao carrinho</button>
+            <button onClick={() => addProduct(props.idProduto, props.imagemBurger, props.nomeBurger, props.preco, quantidade, "")}>Adicionar ao carrinho</button>
             
           </div>
         {/* <FaCartPlus /> */}

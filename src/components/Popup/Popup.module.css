@@ -1,0 +1,28 @@
+
+.container{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 90vh;
+
+}
+
+
+.widget{
+  background-color: #2C2F34;
+  min-width: 20%;
+  height: 30%;
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px #797676;
+  color: #FFF;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+
+}
