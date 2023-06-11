@@ -14,6 +14,12 @@ align-items: center;
 flex-direction: column;
 overflow: scroll;
 overflow-x: hidden;
+border-radius: 5px;
+}
+.pedido{
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .leftSide::-webkit-scrollbar-track
 {

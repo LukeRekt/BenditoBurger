@@ -1,17 +1,23 @@
+import { useContext } from "react"
 import PedidoContent from "../PedidoContent/PedidoContent"
+import { PedidoContext } from "../PedidoContext/PedidoContext"
 import styles from "./DetalhesPedido.module.css"
 
 export default function DetalhesPedido(){
+    const { pedidosSelected, setPedidosSelected } = useContext(PedidoContext) 
+    
     return (
-        <div className={styles.container}>
+        <>
+        {!pedidosSelected ? (<></>) : (<div className={styles.container}>
+            
             <div className={styles.pedidoDetails}>
                 <h1>Detalhes do pedido</h1>
                 <div className={styles.comprador}>
                     <p>Informações pessoais:</p>
                    
-                    <span> <span style={{fontWeight: 700}}>Nome:</span> Lucas Rodrigues da Silva Lemes.</span>
-                    <span> <span style={{fontWeight: 700}}>Telefone:</span> (62) 984822842</span>
-                    <span> <span style={{fontWeight: 700}}>Cpf:</span> 12345678910</span>
+                    <span> <span style={{fontWeight: 700}}>Nome:</span> {pedidosSelected.nome}.</span>
+                    <span> <span style={{fontWeight: 700}}>Telefone:</span> {pedidosSelected.telefone}</span>
+                    <span> <span style={{fontWeight: 700}}>Cpf:</span> {pedidosSelected.cpf}</span>
                 </div>
                 <div className={styles.endereco}>
                     <p>Endereço de entrega:</p>
@@ -46,12 +52,14 @@ export default function DetalhesPedido(){
                 </div>
                 <div className={styles.botoes}>
                     <button>Cancelar</button>
-                    <button>Imprimir</button>
+                    <button onClick={() => console.log(pedidosSelected)}>Imprimir</button>
 
                 </div>
             </div>
             </div>
 
-        </div>
+        </div>)}
+        </>
+        
     )
 }

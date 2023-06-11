@@ -9,11 +9,13 @@
     padding: 10px;
     font-size: 20px;
     box-shadow: 1px 5px 10px 1px rgba(0, 0, 0, 0.356);
+    border-radius: 5px;
 }
 .leftPedido{
  display: flex;
  flex-direction: column;   
  width: 50%;
+ border-radius: 5px;
 }
 .rightPedido{
     display: flex;
@@ -21,6 +23,7 @@
     justify-content: space-between;
     width: 50%;
     height: 100%;
+    border-radius: 5px;
 
 }
 .pedidosText{

@@ -20,6 +20,10 @@ const pedidosSchema = new mongoose.Schema(
 			type: Array,
 			required: true,
 		},
+		removerIngredientes: {
+			type: Array,
+			required: true,
+		},
 		observacao: {
 			type: String,
 			required: false,
@@ -33,6 +37,26 @@ const pedidosSchema = new mongoose.Schema(
 			type: String,
 			required: false,
             default: "Pendente"
+		},
+		rua: {
+			type: String,
+			required: false,
+		},
+		bairro: {
+			type: String,
+			required: false,
+		},
+		complemento: {
+			type: String,
+			required: false,
+		},
+		cep: {
+			type: String,
+			required: false,
+		},
+		pontoReferencia: {
+			type: String,
+			required: false,
 		},
         isActive: {
 			type: Boolean,
