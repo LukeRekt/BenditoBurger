@@ -61,6 +61,11 @@ box-shadow: 2px -10px 40px 10px rgba(0, 0, 0, 0.082);
     display: flex;
     justify-content: space-between;
 }
+.linkContainer{
+    width: 90%;
+    color: white;
+    text-decoration: none;
+}
 
 .botao{
     text-align: center;

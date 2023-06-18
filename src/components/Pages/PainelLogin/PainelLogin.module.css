@@ -87,7 +87,7 @@ border: 3px solid #f92059;
 
 
 
-button{
+  .loginBox button{
 
   text-decoration: none;
   outline: none;
@@ -108,7 +108,7 @@ button{
  
 
 }
-button:hover{
+.loginBox button:hover{
     background-color: #1bb76e;
     transition: .3s;
   }

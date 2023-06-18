@@ -3,6 +3,7 @@ import styles from "./Cart.module.css"
 import { CartContext } from '../../../context/context';
 import { useContext } from 'react';
 import CarrinhoItems from '../../CarrinhoItems/CarrinhoItems';
+import { Link } from 'react-router-dom';
 export default function Cart(){
     const { cart } = useContext(CartContext);
     let carrinho = JSON.parse(sessionStorage.getItem('carrinho'));
@@ -34,8 +35,9 @@ export default function Cart(){
                     <p className={styles.textoValorNumero}>R$ 99,50</p>
                     </div>
 
-                </div>
-                <p className={styles.botao}>PEDIR</p>
+                </div><Link className={styles.linkContainer} to="/checkout">
+                <p className={styles.botao}>
+                    PEDIR</p></Link>
                 </div>)}
         </div>
     )

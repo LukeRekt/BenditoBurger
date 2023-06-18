@@ -11,6 +11,7 @@ import About from './components/Pages/About/About';
 import Painel from './components/Pages/Painel/Painel';
 import PainelLogin from './components/Pages/PainelLogin/PainelLogin';
 import { PedidoContext } from './components/PainelComponents/PedidoContext/PedidoContext';
+import Checkout from './components/Pages/Checkout/Checkout';
 
 function App() {
   const [cart, setCart] = useState(0)
@@ -28,8 +29,9 @@ function App() {
   <Header/>
     <Routes>
       <Route path='/' element={<Home/>}/>
-      <Route path='/carrinho' element={<Cart/>}/>
       <Route path='/lanche' element={<About/>}/>
+      <Route path='/carrinho' element={<Cart/>}/>
+      <Route path='/checkout' element={<Checkout/>}/>
 
 
       {/* ROTAS DE ADMIN ONLY */}
